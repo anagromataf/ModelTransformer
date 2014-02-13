@@ -1,0 +1,649 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F60F246718ACD24D00528D12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F246618ACD24D00528D12 /* Foundation.framework */; };
+		F60F246C18ACD24D00528D12 /* ModelTransformer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F60F246B18ACD24D00528D12 /* ModelTransformer.h */; };
+		F60F246E18ACD24D00528D12 /* ModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F246D18ACD24D00528D12 /* ModelTransformer.m */; };
+		F60F247518ACD24D00528D12 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F247418ACD24D00528D12 /* XCTest.framework */; };
+		F60F247618ACD24D00528D12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F246618ACD24D00528D12 /* Foundation.framework */; };
+		F60F247818ACD24D00528D12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F247718ACD24D00528D12 /* UIKit.framework */; };
+		F60F247B18ACD24D00528D12 /* libModelTransformeriOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F246318ACD24D00528D12 /* libModelTransformeriOS.a */; };
+		F60F248118ACD24D00528D12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F60F247F18ACD24D00528D12 /* InfoPlist.strings */; };
+		F60F248318ACD24D00528D12 /* ModelTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F248218ACD24D00528D12 /* ModelTransformerTests.m */; };
+		F60F249218ACD5CB00528D12 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F249118ACD5CB00528D12 /* Cocoa.framework */; };
+		F60F24A218ACD5CB00528D12 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F247418ACD24D00528D12 /* XCTest.framework */; };
+		F60F24A318ACD5CB00528D12 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F249118ACD5CB00528D12 /* Cocoa.framework */; };
+		F60F24A618ACD5CB00528D12 /* libModelTransformerOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F249018ACD5CB00528D12 /* libModelTransformerOSX.a */; };
+		F60F24B518ACD65F00528D12 /* ModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F246D18ACD24D00528D12 /* ModelTransformer.m */; };
+		F60F24B618ACD66300528D12 /* ModelTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F248218ACD24D00528D12 /* ModelTransformerTests.m */; };
+		F60F24B718ACD66A00528D12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F60F247F18ACD24D00528D12 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F60F247918ACD24D00528D12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F60F245B18ACD24D00528D12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F60F246218ACD24D00528D12;
+			remoteInfo = ModelTransformer;
+		};
+		F60F24A418ACD5CB00528D12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F60F245B18ACD24D00528D12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F60F248F18ACD5CB00528D12;
+			remoteInfo = ModelTransformer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F60F246118ACD24D00528D12 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				F60F246C18ACD24D00528D12 /* ModelTransformer.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F60F246318ACD24D00528D12 /* libModelTransformeriOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModelTransformeriOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60F246618ACD24D00528D12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F60F246A18ACD24D00528D12 /* ModelTransformer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelTransformer-Prefix.pch"; sourceTree = "<group>"; };
+		F60F246B18ACD24D00528D12 /* ModelTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelTransformer.h; sourceTree = "<group>"; };
+		F60F246D18ACD24D00528D12 /* ModelTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelTransformer.m; sourceTree = "<group>"; };
+		F60F247318ACD24D00528D12 /* ModelTransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTransformerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60F247418ACD24D00528D12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F60F247718ACD24D00528D12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F60F247E18ACD24D00528D12 /* ModelTransformerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ModelTransformerTests-Info.plist"; sourceTree = "<group>"; };
+		F60F248018ACD24D00528D12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F60F248218ACD24D00528D12 /* ModelTransformerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelTransformerTests.m; sourceTree = "<group>"; };
+		F60F249018ACD5CB00528D12 /* libModelTransformerOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModelTransformerOSX.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60F249118ACD5CB00528D12 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		F60F249418ACD5CB00528D12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F60F249518ACD5CB00528D12 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F60F249618ACD5CB00528D12 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F60F24A118ACD5CB00528D12 /* ModelTransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTransformerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F60F246018ACD24D00528D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F246718ACD24D00528D12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F247018ACD24D00528D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F247518ACD24D00528D12 /* XCTest.framework in Frameworks */,
+				F60F247818ACD24D00528D12 /* UIKit.framework in Frameworks */,
+				F60F247618ACD24D00528D12 /* Foundation.framework in Frameworks */,
+				F60F247B18ACD24D00528D12 /* libModelTransformeriOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F248D18ACD5CB00528D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F249218ACD5CB00528D12 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F249E18ACD5CB00528D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F24A318ACD5CB00528D12 /* Cocoa.framework in Frameworks */,
+				F60F24A218ACD5CB00528D12 /* XCTest.framework in Frameworks */,
+				F60F24A618ACD5CB00528D12 /* libModelTransformerOSX.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F60F245A18ACD24D00528D12 = {
+			isa = PBXGroup;
+			children = (
+				F60F246818ACD24D00528D12 /* ModelTransformer */,
+				F60F247C18ACD24D00528D12 /* ModelTransformerTests */,
+				F60F246518ACD24D00528D12 /* Frameworks */,
+				F60F246418ACD24D00528D12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F60F246418ACD24D00528D12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F60F246318ACD24D00528D12 /* libModelTransformeriOS.a */,
+				F60F247318ACD24D00528D12 /* ModelTransformerTests.xctest */,
+				F60F249018ACD5CB00528D12 /* libModelTransformerOSX.a */,
+				F60F24A118ACD5CB00528D12 /* ModelTransformerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F60F246518ACD24D00528D12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F60F246618ACD24D00528D12 /* Foundation.framework */,
+				F60F247418ACD24D00528D12 /* XCTest.framework */,
+				F60F247718ACD24D00528D12 /* UIKit.framework */,
+				F60F249118ACD5CB00528D12 /* Cocoa.framework */,
+				F60F249318ACD5CB00528D12 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F60F246818ACD24D00528D12 /* ModelTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				F60F246B18ACD24D00528D12 /* ModelTransformer.h */,
+				F60F246D18ACD24D00528D12 /* ModelTransformer.m */,
+				F60F246918ACD24D00528D12 /* Supporting Files */,
+			);
+			path = ModelTransformer;
+			sourceTree = "<group>";
+		};
+		F60F246918ACD24D00528D12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F60F246A18ACD24D00528D12 /* ModelTransformer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F60F247C18ACD24D00528D12 /* ModelTransformerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F60F248218ACD24D00528D12 /* ModelTransformerTests.m */,
+				F60F247D18ACD24D00528D12 /* Supporting Files */,
+			);
+			path = ModelTransformerTests;
+			sourceTree = "<group>";
+		};
+		F60F247D18ACD24D00528D12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F60F247E18ACD24D00528D12 /* ModelTransformerTests-Info.plist */,
+				F60F247F18ACD24D00528D12 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F60F249318ACD5CB00528D12 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F60F249418ACD5CB00528D12 /* Foundation.framework */,
+				F60F249518ACD5CB00528D12 /* CoreData.framework */,
+				F60F249618ACD5CB00528D12 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F60F248E18ACD5CB00528D12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F60F246218ACD24D00528D12 /* ModelTransformeriOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F60F248618ACD24D00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformeriOS" */;
+			buildPhases = (
+				F60F245F18ACD24D00528D12 /* Sources */,
+				F60F246018ACD24D00528D12 /* Frameworks */,
+				F60F246118ACD24D00528D12 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModelTransformeriOS;
+			productName = ModelTransformer;
+			productReference = F60F246318ACD24D00528D12 /* libModelTransformeriOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F60F247218ACD24D00528D12 /* ModelTransformeriOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F60F248918ACD24D00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformeriOSTests" */;
+			buildPhases = (
+				F60F246F18ACD24D00528D12 /* Sources */,
+				F60F247018ACD24D00528D12 /* Frameworks */,
+				F60F247118ACD24D00528D12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F60F247A18ACD24D00528D12 /* PBXTargetDependency */,
+			);
+			name = ModelTransformeriOSTests;
+			productName = ModelTransformerTests;
+			productReference = F60F247318ACD24D00528D12 /* ModelTransformerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F60F248F18ACD5CB00528D12 /* ModelTransformerOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F60F24AF18ACD5CB00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformerOSX" */;
+			buildPhases = (
+				F60F248C18ACD5CB00528D12 /* Sources */,
+				F60F248D18ACD5CB00528D12 /* Frameworks */,
+				F60F248E18ACD5CB00528D12 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModelTransformerOSX;
+			productName = ModelTransformer;
+			productReference = F60F249018ACD5CB00528D12 /* libModelTransformerOSX.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F60F24A018ACD5CB00528D12 /* ModelTransformerOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F60F24B218ACD5CB00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformerOSXTests" */;
+			buildPhases = (
+				F60F249D18ACD5CB00528D12 /* Sources */,
+				F60F249E18ACD5CB00528D12 /* Frameworks */,
+				F60F249F18ACD5CB00528D12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F60F24A518ACD5CB00528D12 /* PBXTargetDependency */,
+			);
+			name = ModelTransformerOSXTests;
+			productName = ModelTransformerTests;
+			productReference = F60F24A118ACD5CB00528D12 /* ModelTransformerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F60F245B18ACD24D00528D12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MT;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Tobias Kräntzer";
+			};
+			buildConfigurationList = F60F245E18ACD24D00528D12 /* Build configuration list for PBXProject "ModelTransformer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F60F245A18ACD24D00528D12;
+			productRefGroup = F60F246418ACD24D00528D12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F60F246218ACD24D00528D12 /* ModelTransformeriOS */,
+				F60F247218ACD24D00528D12 /* ModelTransformeriOSTests */,
+				F60F248F18ACD5CB00528D12 /* ModelTransformerOSX */,
+				F60F24A018ACD5CB00528D12 /* ModelTransformerOSXTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F60F247118ACD24D00528D12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F248118ACD24D00528D12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F249F18ACD5CB00528D12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F24B718ACD66A00528D12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F60F245F18ACD24D00528D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F246E18ACD24D00528D12 /* ModelTransformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F246F18ACD24D00528D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F248318ACD24D00528D12 /* ModelTransformerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F248C18ACD5CB00528D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F24B518ACD65F00528D12 /* ModelTransformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60F249D18ACD5CB00528D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60F24B618ACD66300528D12 /* ModelTransformerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F60F247A18ACD24D00528D12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F60F246218ACD24D00528D12 /* ModelTransformeriOS */;
+			targetProxy = F60F247918ACD24D00528D12 /* PBXContainerItemProxy */;
+		};
+		F60F24A518ACD5CB00528D12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F60F248F18ACD5CB00528D12 /* ModelTransformerOSX */;
+			targetProxy = F60F24A418ACD5CB00528D12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F60F247F18ACD24D00528D12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F60F248018ACD24D00528D12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F60F248418ACD24D00528D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F60F248518ACD24D00528D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F60F248718ACD24D00528D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ModelTransformer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F60F248818ACD24D00528D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ModelTransformer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F60F248A18ACD24D00528D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ModelTransformerTests/ModelTransformerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F60F248B18ACD24D00528D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				INFOPLIST_FILE = "ModelTransformerTests/ModelTransformerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		F60F24B018ACD5CB00528D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F60F24B118ACD5CB00528D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F60F24B318ACD5CB00528D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ModelTransformerTests/ModelTransformerTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F60F24B418ACD5CB00528D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ModelTransformer/ModelTransformer-Prefix.pch";
+				INFOPLIST_FILE = "ModelTransformerTests/ModelTransformerTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F60F245E18ACD24D00528D12 /* Build configuration list for PBXProject "ModelTransformer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60F248418ACD24D00528D12 /* Debug */,
+				F60F248518ACD24D00528D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F60F248618ACD24D00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformeriOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60F248718ACD24D00528D12 /* Debug */,
+				F60F248818ACD24D00528D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F60F248918ACD24D00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformeriOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60F248A18ACD24D00528D12 /* Debug */,
+				F60F248B18ACD24D00528D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F60F24AF18ACD5CB00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformerOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60F24B018ACD5CB00528D12 /* Debug */,
+				F60F24B118ACD5CB00528D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F60F24B218ACD5CB00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformerOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60F24B318ACD5CB00528D12 /* Debug */,
+				F60F24B418ACD5CB00528D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F60F245B18ACD24D00528D12 /* Project object */;
+}
