@@ -11,8 +11,13 @@
 
 @interface MTObject : NSObject
 
+#pragma mark Life-cycle
 - (id)initWithObject:(id)object entity:(NSEntityDescription *)entity;
 
+#pragma mark Entity Description
 @property (nonatomic, readonly) NSEntityDescription *entity;
+
+#pragma mark Transform Value
+- (id)transformValue:(id)value forProperty:(NSPropertyDescription *)property;
 
 @end

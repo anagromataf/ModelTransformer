@@ -18,6 +18,8 @@
 
 @implementation MTObject
 
+#pragma mark Life-cycle
+
 - (id)initWithObject:(id)object entity:(NSEntityDescription *)entity
 {
     self = [super init];
@@ -27,6 +29,24 @@
         _mt_cache = [NSMapTable strongToStrongObjectsMapTable];
     }
     return self;
+}
+
+#pragma mark Transform Value
+
+- (id)transformValue:(id)value forProperty:(NSPropertyDescription *)property
+{
+    id proxy = nil;
+    if ([property isKindOfClass:[NSRelationshipDescription class]]) {
+        NSRelationshipDescription *relationship = (NSRelationshipDescription *)property;
+        if (relationship.isToMany) {
+            proxy = [[MTArray alloc] initWithArray:value entity:relationship.destinationEntity];
+        } else {
+            proxy = [[MTObject alloc] initWithObject:value entity:relationship.destinationEntity];
+        }
+    } else {
+        proxy = value;
+    }
+    return proxy;
 }
 
 #pragma mark KVC
@@ -43,16 +63,7 @@
         if (proxy == nil) {
             id value = [_mt_object valueForKey:key];
             if (value) {
-                if ([property isKindOfClass:[NSRelationshipDescription class]]) {
-                    NSRelationshipDescription *relationship = (NSRelationshipDescription *)property;
-                    if (relationship.isToMany) {
-                        proxy = [[MTArray alloc] initWithArray:value entity:relationship.destinationEntity];
-                    } else {
-                        proxy = [[MTObject alloc] initWithObject:value entity:relationship.destinationEntity];
-                    }
-                } else {
-                    proxy = value;
-                }
+                proxy = [self transformValue:value forProperty:property];
             } else {
                 proxy = [NSNull null];
             }

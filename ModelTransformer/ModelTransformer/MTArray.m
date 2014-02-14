@@ -19,6 +19,8 @@
 
 @implementation MTArray
 
+#pragma mark Life-cycle
+
 - (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity
 {
     self = [super init];
@@ -29,6 +31,13 @@
         [_mt_cache setCount:[_mt_array count]];
     }
     return self;
+}
+
+#pragma mark Transform Object
+
+- (id)transformObject:(id)object
+{
+    return [[MTObject alloc] initWithObject:object entity:self.entity];
 }
 
 #pragma mark NSArray
@@ -42,11 +51,13 @@
 {
     id proxy = [_mt_cache pointerAtIndex:index];
     if (proxy == nil) {
-        id value = [_mt_array objectAtIndex:index];
-        proxy = [[MTObject alloc] initWithObject:value entity:self.entity];
+        id object = [_mt_array objectAtIndex:index];
+        proxy = [self transformObject:object];
         [_mt_cache insertPointer:(void *)proxy atIndex:index];
     }
     return proxy;
 }
+
+
 
 @end
