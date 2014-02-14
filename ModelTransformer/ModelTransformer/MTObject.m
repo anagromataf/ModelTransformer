@@ -6,10 +6,14 @@
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
+#import "MTArray.h"
+
 #import "MTObject.h"
 
-@interface MTObject ()
-@property (nonatomic, readonly) id underlyingObject;
+@interface MTObject () {
+    id _mt_object;
+    NSMapTable *_mt_cache;
+}
 @end
 
 @implementation MTObject
@@ -19,9 +23,45 @@
     self = [super init];
     if (self) {
         _entity = entity;
-        _underlyingObject = object;
+        _mt_object = object;
+        _mt_cache = [NSMapTable strongToStrongObjectsMapTable];
     }
     return self;
+}
+
+#pragma mark KVC
+
+- (id)valueForKey:(NSString *)key
+{
+    NSPropertyDescription *property = [self.entity.propertiesByName objectForKey:key];
+    
+    if (property) {
+        id proxy = [_mt_cache objectForKey:key];
+        if ([proxy isKindOfClass:[NSNull class]]) {
+            return nil;
+        }
+        if (proxy == nil) {
+            id value = [_mt_object valueForKey:key];
+            if (value) {
+                if ([property isKindOfClass:[NSRelationshipDescription class]]) {
+                    NSRelationshipDescription *relationship = (NSRelationshipDescription *)property;
+                    if (relationship.isToMany) {
+                        proxy = [[MTArray alloc] initWithArray:value entity:relationship.destinationEntity];
+                    } else {
+                        proxy = [[MTObject alloc] initWithObject:value entity:relationship.destinationEntity];
+                    }
+                } else {
+                    proxy = value;
+                }
+            } else {
+                proxy = [NSNull null];
+            }
+            [_mt_cache setObject:proxy forKey:key];
+        }
+        return proxy;
+    } else {
+        return [super valueForKey:key];
+    }
 }
 
 @end

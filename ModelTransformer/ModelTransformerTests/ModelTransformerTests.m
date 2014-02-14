@@ -7,28 +7,52 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <CoreData/CoreData.h>
+
+#import "ModelTransformer.h"
 
 @interface ModelTransformerTests : XCTestCase
-
+@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @end
 
 @implementation ModelTransformerTests
 
 - (void)setUp
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
 }
 
-- (void)tearDown
+#pragma mark Tests
+
+- (void)testAttributeProperties
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+    NSDictionary *note = @{@"text": @"FOO BAR"};
+    NSEntityDescription *entity =[self entityWithName:@"Note"];
+    
+    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    XCTAssertNotEqual(note, object);
+    
+    id text = [object valueForKey:@"text"];
+    XCTAssertTrue([text isKindOfClass:[NSString class]]);
 }
 
-- (void)testExample
+#pragma mark Helpers
+
+- (NSEntityDescription *)entityWithName:(NSString *)name
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    return [[self.managedObjectModel entitiesByName] valueForKey:name];
+}
+
+- (NSPropertyDescription *)propertyWithName:(NSString *)propertyName ofEntity:(id)entity
+{
+    if ([entity isKindOfClass:[NSString class]]) {
+        entity = [self entityWithName:entity];
+    }
+    return [[(NSEntityDescription *)entity propertiesByName] valueForKey:propertyName];
 }
 
 @end
