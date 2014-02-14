@@ -27,6 +27,8 @@
 		F60F24BF18ACD72200528D12 /* MTArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F60F24BD18ACD72200528D12 /* MTArray.h */; };
 		F60F24C018ACD72200528D12 /* MTArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24BE18ACD72200528D12 /* MTArray.m */; };
 		F60F24C118ACD72200528D12 /* MTArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24BE18ACD72200528D12 /* MTArray.m */; };
+		F6CF7E5218AE79820039CD2B /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */; };
+		F6CF7E5318AE79820039CD2B /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +66,7 @@
 		F60F246618ACD24D00528D12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F60F246A18ACD24D00528D12 /* ModelTransformer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelTransformer-Prefix.pch"; sourceTree = "<group>"; };
 		F60F246B18ACD24D00528D12 /* ModelTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelTransformer.h; sourceTree = "<group>"; };
-		F60F247318ACD24D00528D12 /* ModelTransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTransformerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60F247318ACD24D00528D12 /* ModelTransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ModelTransformerTests.xctest; path = ModelTransformeriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60F247418ACD24D00528D12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F60F247718ACD24D00528D12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F60F247E18ACD24D00528D12 /* ModelTransformerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ModelTransformerTests-Info.plist"; sourceTree = "<group>"; };
@@ -75,11 +77,12 @@
 		F60F249418ACD5CB00528D12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F60F249518ACD5CB00528D12 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F60F249618ACD5CB00528D12 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		F60F24A118ACD5CB00528D12 /* ModelTransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTransformerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60F24A118ACD5CB00528D12 /* ModelTransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ModelTransformerTests.xctest; path = ModelTransformerOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60F24B818ACD71000528D12 /* MTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTObject.h; sourceTree = "<group>"; };
 		F60F24B918ACD71000528D12 /* MTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTObject.m; sourceTree = "<group>"; };
 		F60F24BD18ACD72200528D12 /* MTArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTArray.h; sourceTree = "<group>"; };
 		F60F24BE18ACD72200528D12 /* MTArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTArray.m; sourceTree = "<group>"; };
+		F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,7 @@
 		F60F247C18ACD24D00528D12 /* ModelTransformerTests */ = {
 			isa = PBXGroup;
 			children = (
+				F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */,
 				F60F248218ACD24D00528D12 /* ModelTransformerTests.m */,
 				F60F247D18ACD24D00528D12 /* Supporting Files */,
 			);
@@ -353,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CF7E5218AE79820039CD2B /* Model.xcdatamodel in Sources */,
 				F60F248318ACD24D00528D12 /* ModelTransformerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CF7E5318AE79820039CD2B /* Model.xcdatamodel in Sources */,
 				F60F24B618ACD66300528D12 /* ModelTransformerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +638,7 @@
 				F60F248818ACD24D00528D12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F60F248918ACD24D00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformeriOSTests" */ = {
 			isa = XCConfigurationList;
@@ -640,6 +647,7 @@
 				F60F248B18ACD24D00528D12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F60F24AF18ACD5CB00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformerOSX" */ = {
 			isa = XCConfigurationList;
@@ -648,6 +656,7 @@
 				F60F24B118ACD5CB00528D12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F60F24B218ACD5CB00528D12 /* Build configuration list for PBXNativeTarget "ModelTransformerOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -656,6 +665,7 @@
 				F60F24B418ACD5CB00528D12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
