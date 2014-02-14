@@ -59,6 +59,31 @@
     XCTAssertEqualObjects([person valueForKey:@"name"], @"Paul");
 }
 
+- (void)testToManyRelationshipProperties
+{
+    NSDictionary *values = @{@"tags": @[@{@"name":@"A"}, @{@"name":@"B"}, @{@"name":@"C"}]};
+    NSEntityDescription *entity = [self entityWithName:@"Entity"];
+    
+    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    XCTAssertNotEqual(values, object);
+    
+    MTArray *tags = [object valueForKey:@"tags"];
+    XCTAssertNotNil(tags);
+    XCTAssertTrue([tags isKindOfClass:[MTArray class]]);
+    
+    XCTAssertEqualObjects(tags.entity, [self entityWithName:@"Tag"]);
+    
+    XCTAssertEqual([tags count], (NSUInteger)3);
+    
+    MTObject *tag = [tags objectAtIndex:0];
+    XCTAssertNotNil(tag);
+    XCTAssertEqualObjects(tag.entity, [self entityWithName:@"Tag"]);
+    XCTAssertTrue([tag isKindOfClass:[MTObject class]]);
+}
+
 #pragma mark Helpers
 
 - (NSEntityDescription *)entityWithName:(NSString *)name
