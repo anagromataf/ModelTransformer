@@ -10,6 +10,22 @@
 
 #import "MTObject.h"
 
+@interface MTNull : NSObject
++ (instancetype)null;
+@end
+
+@implementation MTNull
++ (instancetype)null
+{
+    static dispatch_once_t onceToken;
+    static  MTNull *null;
+    dispatch_once(&onceToken, ^{
+        null = [[MTNull alloc] init];
+    });
+    return null;
+}
+@end
+
 @interface MTObject () {
     id _mt_object;
     NSMapTable *_mt_cache;
@@ -57,19 +73,20 @@
     
     if (property) {
         id proxy = [_mt_cache objectForKey:key];
-        if ([proxy isKindOfClass:[NSNull class]]) {
-            return nil;
-        }
         if (proxy == nil) {
             id value = [_mt_object valueForKey:key];
             if (value) {
                 proxy = [self transformValue:value forProperty:property];
             } else {
-                proxy = [NSNull null];
+                proxy = [MTNull null];
             }
             [_mt_cache setObject:proxy forKey:key];
         }
-        return proxy;
+        if (proxy == [MTNull null]) {
+            return nil;
+        } else {
+            return proxy;
+        }
     } else {
         return [super valueForKey:key];
     }

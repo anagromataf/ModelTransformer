@@ -25,6 +25,36 @@
 
 #pragma mark Tests
 
+- (void)testNilValue
+{
+    NSDictionary *note = @{};
+    NSEntityDescription *entity =[self entityWithName:@"Note"];
+    
+    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    XCTAssertNotEqual(note, object);
+    
+    id text = [object valueForKey:@"text"];
+    XCTAssertNil(text);
+}
+
+- (void)testNSNillValue
+{
+    NSDictionary *note = @{@"text": [NSNull null]};
+    NSEntityDescription *entity =[self entityWithName:@"Note"];
+    
+    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    XCTAssertNotEqual(note, object);
+    
+    id text = [object valueForKey:@"text"];
+    XCTAssertEqualObjects(text, [NSNull null]);
+}
+
 - (void)testAttributeProperties
 {
     NSDictionary *note = @{@"text": @"FOO BAR"};
