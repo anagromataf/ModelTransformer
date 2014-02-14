@@ -40,6 +40,25 @@
     XCTAssertTrue([text isKindOfClass:[NSString class]]);
 }
 
+- (void)testToOneRelationshipProperties
+{
+    NSDictionary *values = @{@"owner": @{@"name":@"Paul"}};
+    NSEntityDescription *entity = [self entityWithName:@"Entity"];
+    
+    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    XCTAssertNotEqual(values, object);
+    
+    MTObject *person = [object valueForKey:@"owner"];
+    XCTAssertNotNil(person);
+    XCTAssertTrue([person isKindOfClass:[MTObject class]]);
+    
+    XCTAssertEqualObjects(person.entity, [self entityWithName:@"Person"]);
+    XCTAssertEqualObjects([person valueForKey:@"name"], @"Paul");
+}
+
 #pragma mark Helpers
 
 - (NSEntityDescription *)entityWithName:(NSString *)name
