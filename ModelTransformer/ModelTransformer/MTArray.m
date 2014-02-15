@@ -19,9 +19,15 @@
 
 @implementation MTArray
 
++ (Class)objectClass
+{
+    return [MTObject class];
+}
+
 #pragma mark Life-cycle
 
-- (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity
+- (instancetype)initWithArray:(NSArray *)array
+                       entity:(NSEntityDescription *)entity
 {
     self = [super init];
     if (self) {
@@ -37,7 +43,7 @@
 
 - (id)transformObject:(id)object
 {
-    return [[MTObject alloc] initWithObject:object entity:self.entity];
+    return [[[[self class] objectClass] alloc] initWithObject:object entity:self.entity];
 }
 
 #pragma mark NSArray

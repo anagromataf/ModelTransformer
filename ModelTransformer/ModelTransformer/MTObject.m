@@ -49,18 +49,31 @@
 
 #pragma mark Transform Value
 
-- (id)transformValue:(id)value forProperty:(NSPropertyDescription *)property
+- (id)transformValue:(id)value usingPropertyDescription:(NSPropertyDescription *)property
 {
     id proxy = nil;
     if ([property isKindOfClass:[NSRelationshipDescription class]]) {
         NSRelationshipDescription *relationship = (NSRelationshipDescription *)property;
-        if (relationship.isToMany) {
-            proxy = [[MTArray alloc] initWithArray:value entity:relationship.destinationEntity];
-        } else {
-            proxy = [[MTObject alloc] initWithObject:value entity:relationship.destinationEntity];
-        }
+        proxy = [self transformRelationshipValue:value usingRelationshipDescription:relationship];
     } else {
-        proxy = value;
+        NSAttributeDescription *attribute = (NSAttributeDescription *)property;
+        proxy = [self transformAttributeValue:value usingAttributeDescription:attribute];
+    }
+    return proxy;
+}
+
+- (id)transformAttributeValue:(id)value usingAttributeDescription:(NSAttributeDescription *)attribute
+{
+    return value;
+}
+
+- (id)transformRelationshipValue:(id)value usingRelationshipDescription:(NSRelationshipDescription *)relationship
+{
+    id proxy = nil;
+    if (relationship.isToMany) {
+        proxy = [[MTArray alloc] initWithArray:value entity:relationship.destinationEntity];
+    } else {
+        proxy = [[MTObject alloc] initWithObject:value entity:relationship.destinationEntity];
     }
     return proxy;
 }
@@ -76,7 +89,7 @@
         if (proxy == nil) {
             id value = [_mt_object valueForKey:key];
             if (value) {
-                proxy = [self transformValue:value forProperty:property];
+                proxy = [self transformValue:value usingPropertyDescription:property];
             } else {
                 proxy = [MTNull null];
             }
