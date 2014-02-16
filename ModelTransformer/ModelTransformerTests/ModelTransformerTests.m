@@ -30,7 +30,7 @@
     NSDictionary *note = @{};
     NSEntityDescription *entity =[self entityWithName:@"Note"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity];
+    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -45,7 +45,7 @@
     NSDictionary *note = @{@"text": [NSNull null]};
     NSEntityDescription *entity =[self entityWithName:@"Note"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity];
+    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -60,7 +60,7 @@
     NSDictionary *note = @{@"text": @"FOO BAR"};
     NSEntityDescription *entity =[self entityWithName:@"Note"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity];
+    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -75,7 +75,7 @@
     NSDictionary *values = @{@"owner": @{@"name":@"Paul"}};
     NSEntityDescription *entity = [self entityWithName:@"Entity"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity];
+    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -94,7 +94,7 @@
     NSDictionary *values = @{@"tags": @[@{@"name":@"A"}, @{@"name":@"B"}, @{@"name":@"C"}]};
     NSEntityDescription *entity = [self entityWithName:@"Entity"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity];
+    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);

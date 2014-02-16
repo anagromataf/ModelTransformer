@@ -14,6 +14,7 @@
     NSArray *_mt_array;
     NSPointerArray *_mt_cache;
     Class _mt_class;
+    NSDictionary *_mt_userInfo;
 }
 
 @end
@@ -24,16 +25,18 @@
 
 - (instancetype)initWithArray:(NSArray *)array
                        entity:(NSEntityDescription *)entity
+                     userInfo:(NSDictionary *)userInfo
 {
-    return [self initWithArray:array entity:entity class:[MTObject class]];
+    return [self initWithArray:array entity:entity userInfo:userInfo class:[MTObject class]];
 }
 
-- (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity class:(Class)_class
+- (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo class:(Class)_class
 {
     self = [super init];
     if (self) {
         _entity = entity;
         _mt_class = _class;
+        _mt_userInfo = userInfo;
         _mt_array = [array copy];
         _mt_cache = [NSPointerArray strongObjectsPointerArray];
         [_mt_cache setCount:[_mt_array count]];
@@ -43,13 +46,13 @@
 
 #pragma mark Transform Object
 
-- (id)transformedObjectAtIndex:(NSUInteger)index ofArray:(NSArray *)array
+- (id)transformedObjectAtIndex:(NSUInteger)index ofArray:(NSArray *)array userInfo:(NSDictionary *)userInfo
 {
     id object = [array objectAtIndex:index];
-    return [[_mt_class alloc] initWithObject:object entity:self.entity];
+    return [[_mt_class alloc] initWithObject:object entity:self.entity userInfo:userInfo];
 }
 
-- (NSUInteger)transformedCountOfArray:(NSArray *)array
+- (NSUInteger)transformedCountOfArray:(NSArray *)array userInfo:(NSDictionary *)userInfo
 {
     return [array count];
 }
@@ -58,14 +61,14 @@
 
 - (NSUInteger)count
 {
-    return [_mt_array count];
+    return [self transformedCountOfArray:_mt_array userInfo:_mt_userInfo];
 }
 
 - (id)objectAtIndex:(NSUInteger)index
 {
     id proxy = [_mt_cache pointerAtIndex:index];
     if (proxy == nil) {
-        proxy = [self transformedObjectAtIndex:index ofArray:_mt_array];
+        proxy = [self transformedObjectAtIndex:index ofArray:_mt_array userInfo:_mt_userInfo];
         [_mt_cache insertPointer:(void *)proxy atIndex:index];
     }
     return proxy;

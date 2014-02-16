@@ -12,13 +12,13 @@
 @interface MTObject : NSObject
 
 #pragma mark Life-cycle
-- (id)initWithObject:(id)object entity:(NSEntityDescription *)entity;
+- (id)initWithObject:(id)object entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo;
 
 #pragma mark Entity Description
 @property (nonatomic, readonly) NSEntityDescription *entity;
 
 #pragma mark Transform Value - Overwrite in Subclass
-- (id)transformedValueForAttribute:(NSAttributeDescription *)attributeDescription ofObject:(id)object;
-- (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object;
+- (id)transformedValueForAttribute:(NSAttributeDescription *)attributeDescription ofObject:(id)object userInfo:(NSDictionary *)userInfo;
+- (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object userInfo:(NSDictionary *)userInfo;
 
 @end
