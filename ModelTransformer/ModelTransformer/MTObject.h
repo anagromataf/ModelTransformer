@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) NSEntityDescription *entity;
 
 #pragma mark Transform Value - Overwrite in Subclass
-- (id)transformAttributeValue:(id)value usingAttributeDescription:(NSAttributeDescription *)attribute;
-- (id)transformRelationshipValue:(id)value usingRelationshipDescription:(NSRelationshipDescription *)relationship;
+- (id)transformedValueForAttribute:(NSAttributeDescription *)attributeDescription ofObject:(id)object;
+- (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object;
 
 @end

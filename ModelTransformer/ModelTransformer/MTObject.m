@@ -49,33 +49,22 @@
 
 #pragma mark Transform Value
 
-- (id)transformValue:(id)value usingPropertyDescription:(NSPropertyDescription *)property
+- (id)transformedValueForAttribute:(NSAttributeDescription *)attributeDescription ofObject:(id)object
 {
-    id proxy = nil;
-    if ([property isKindOfClass:[NSRelationshipDescription class]]) {
-        NSRelationshipDescription *relationship = (NSRelationshipDescription *)property;
-        proxy = [self transformRelationshipValue:value usingRelationshipDescription:relationship];
-    } else {
-        NSAttributeDescription *attribute = (NSAttributeDescription *)property;
-        proxy = [self transformAttributeValue:value usingAttributeDescription:attribute];
-    }
-    return proxy;
+    return [object valueForKey:attributeDescription.name];
 }
 
-- (id)transformAttributeValue:(id)value usingAttributeDescription:(NSAttributeDescription *)attribute
+- (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object
 {
-    return value;
-}
-
-- (id)transformRelationshipValue:(id)value usingRelationshipDescription:(NSRelationshipDescription *)relationship
-{
-    id proxy = nil;
-    if (relationship.isToMany) {
-        proxy = [[MTArray alloc] initWithArray:value entity:relationship.destinationEntity];
-    } else {
-        proxy = [[MTObject alloc] initWithObject:value entity:relationship.destinationEntity];
+    id value = [object valueForKey:relationshipDescription.name];
+    if (value == nil) {
+        return nil;
     }
-    return proxy;
+    if (relationshipDescription.isToMany) {
+        return [[MTArray alloc] initWithArray:value entity:relationshipDescription.destinationEntity];
+    } else {
+        return [[MTObject alloc] initWithObject:value entity:relationshipDescription.destinationEntity];
+    }
 }
 
 #pragma mark KVC
@@ -87,19 +76,22 @@
     if (property) {
         id proxy = [_mt_cache objectForKey:key];
         if (proxy == nil) {
-            id value = [_mt_object valueForKey:key];
-            if (value) {
-                proxy = [self transformValue:value usingPropertyDescription:property];
+            
+            if ([property isKindOfClass:[NSRelationshipDescription class]]) {
+                NSRelationshipDescription *relationship = (NSRelationshipDescription *)property;
+                proxy = [self transformedValueForRelationship:relationship ofObject:_mt_object];
             } else {
-                proxy = [MTNull null];
+                NSAttributeDescription *attribute = (NSAttributeDescription *)property;
+                proxy = [self transformedValueForAttribute:attribute ofObject:_mt_object];
             }
-            [_mt_cache setObject:proxy forKey:key];
+            
+            if (proxy) {
+                [_mt_cache setObject:proxy forKey:key];
+            } else {
+                [_mt_cache setObject:[MTNull null] forKey:key];
+            }
         }
-        if (proxy == [MTNull null]) {
-            return nil;
-        } else {
-            return proxy;
-        }
+        return proxy;
     } else {
         return [super valueForKey:key];
     }

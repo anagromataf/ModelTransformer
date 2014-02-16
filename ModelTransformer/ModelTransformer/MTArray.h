@@ -11,15 +11,15 @@
 
 @interface MTArray : NSArray
 
-+ (Class)objectClass;
-
 #pragma mark Life-cycle
 - (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity;
+- (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity class:(Class)_class;
 
 #pragma mark Entity Description
 @property (nonatomic, readonly) NSEntityDescription *entity;
 
 #pragma mark Transform Object - Overwrite in Subclass
-- (id)transformObject:(id)object;
+- (id)transformedObjectAtIndex:(NSUInteger)index ofArray:(NSArray *)array;
+- (NSUInteger)transformedCountOfArray:(NSArray *)array;
 
 @end
