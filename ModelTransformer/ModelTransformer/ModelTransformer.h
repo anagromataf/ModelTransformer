@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
-@interface ModelTransformer : NSObject
-
-@end
+#import "MTObject.h"
+#import "MTArray.h"

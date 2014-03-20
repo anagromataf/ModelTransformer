@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ColoredEntity" representedClassName="ColoredEntity" parentEntity="Entity" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="metadata" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Metadata" inverseName="metadataOfEntity" inverseEntity="Metadata" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="ownerOf" inverseEntity="Person" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="subentities" inverseEntity="Entity" syncable="YES"/>
+        <relationship name="subentities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entity" inverseName="parent" inverseEntity="Entity" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="entities" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="tokens" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Token" inverseName="tokenOfEntity" inverseEntity="Token" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="parent"/>
+                <index value="identifier"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="Metadata" representedClassName="Metadata" syncable="YES">
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="metadataOfEntity" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="metadata" inverseEntity="Entity" syncable="YES"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="ownerOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entity" inverseName="owner" inverseEntity="Entity" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="name"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="entities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entity" inverseName="tags" inverseEntity="Entity" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="name"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="Token" representedClassName="Token" syncable="YES">
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tokenOfEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="tokens" inverseEntity="Entity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ColoredEntity" positionX="7" positionY="99" width="128" height="58"/>
+        <element name="Entity" positionX="43" positionY="-162" width="128" height="178"/>
+        <element name="Metadata" positionX="-216" positionY="-153" width="128" height="73"/>
+        <element name="Note" positionX="241" positionY="-153" width="128" height="58"/>
+        <element name="Tag" positionX="-218" positionY="-55" width="128" height="73"/>
+        <element name="Token" positionX="-189" positionY="35" width="128" height="73"/>
+        <element name="Person" positionX="-162" positionY="-252" width="128" height="73"/>
+    </elements>
+</model>
