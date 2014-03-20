@@ -34,7 +34,7 @@
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
-    XCTAssertNotEqual(note, object);
+    XCTAssertNotEqual((id)note, (id)object);
     
     id text = [object valueForKey:@"text"];
     XCTAssertNil(text);
@@ -49,7 +49,7 @@
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
-    XCTAssertNotEqual(note, object);
+    XCTAssertNotEqual((id)note, (id)object);
     
     id text = [object valueForKey:@"text"];
     XCTAssertEqualObjects(text, [NSNull null]);
@@ -64,7 +64,7 @@
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
-    XCTAssertNotEqual(note, object);
+    XCTAssertNotEqual((id)note, (id)object);
     
     id text = [object valueForKey:@"text"];
     XCTAssertTrue([text isKindOfClass:[NSString class]]);
@@ -79,7 +79,7 @@
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
-    XCTAssertNotEqual(values, object);
+    XCTAssertNotEqual((id)values, (id)object);
     
     MTObject *person = [object valueForKey:@"owner"];
     XCTAssertNotNil(person);
@@ -98,7 +98,7 @@
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
-    XCTAssertNotEqual(values, object);
+    XCTAssertNotEqual((id)values, (id)object);
     
     MTArray *tags = [object valueForKey:@"tags"];
     XCTAssertNotNil(tags);
