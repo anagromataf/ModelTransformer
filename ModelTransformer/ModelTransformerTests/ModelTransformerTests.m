@@ -40,6 +40,24 @@
     XCTAssertNil(text);
 }
 
+- (void)testCachedNilValue
+{
+    NSDictionary *note = @{};
+    NSEntityDescription *entity =[self entityWithName:@"Note"];
+    
+    MTObjectTransformer *object = [[MTObjectTransformer alloc] initWithObject:note entity:entity userInfo:nil];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    XCTAssertNotEqual((id)note, (id)object);
+    
+    id text = [object valueForKey:@"text"];
+    XCTAssertNil(text);
+    
+    text = [object valueForKey:@"text"];
+    XCTAssertNil(text);
+}
+
 - (void)testNSNillValue
 {
     NSDictionary *note = @{@"text": [NSNull null]};

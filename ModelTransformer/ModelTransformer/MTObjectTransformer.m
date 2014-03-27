@@ -98,7 +98,7 @@
                 [_mt_cache setObject:[MTNull null] forKey:key];
             }
         }
-        return proxy;
+        return (proxy == [MTNull null]) ? nil : proxy;
     } else {
         return [super valueForKey:key];
     }
