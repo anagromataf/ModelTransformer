@@ -13,6 +13,7 @@
 @interface MTArray () {
     NSArray *_mt_array;
     NSPointerArray *_mt_cache;
+    NSUInteger _mt_count;
     Class _mt_class;
     NSDictionary *_mt_userInfo;
 }
@@ -38,6 +39,7 @@
         _mt_class = _class;
         _mt_userInfo = userInfo;
         _mt_array = [array copy];
+        _mt_count = NSUIntegerMax;
         _mt_cache = [NSPointerArray strongObjectsPointerArray];
         [_mt_cache setCount:[_mt_array count]];
     }
@@ -61,7 +63,10 @@
 
 - (NSUInteger)count
 {
-    return [self transformedCountOfArray:_mt_array userInfo:_mt_userInfo];
+    if (_mt_count == NSUIntegerMax) {
+        _mt_count = [self transformedCountOfArray:_mt_array userInfo:_mt_userInfo];
+    }
+    return _mt_count;
 }
 
 - (id)objectAtIndex:(NSUInteger)index
