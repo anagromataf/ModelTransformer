@@ -30,7 +30,7 @@
     NSDictionary *note = @{};
     NSEntityDescription *entity =[self entityWithName:@"Note"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity userInfo:nil];
+    MTObjectTransformer *object = [[MTObjectTransformer alloc] initWithObject:note entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -45,7 +45,7 @@
     NSDictionary *note = @{@"text": [NSNull null]};
     NSEntityDescription *entity =[self entityWithName:@"Note"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity userInfo:nil];
+    MTObjectTransformer *object = [[MTObjectTransformer alloc] initWithObject:note entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -60,7 +60,7 @@
     NSDictionary *note = @{@"text": @"FOO BAR"};
     NSEntityDescription *entity =[self entityWithName:@"Note"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:note entity:entity userInfo:nil];
+    MTObjectTransformer *object = [[MTObjectTransformer alloc] initWithObject:note entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
@@ -75,15 +75,15 @@
     NSDictionary *values = @{@"owner": @{@"name":@"Paul"}};
     NSEntityDescription *entity = [self entityWithName:@"Entity"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity userInfo:nil];
+    MTObjectTransformer *object = [[MTObjectTransformer alloc] initWithObject:values entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
     XCTAssertNotEqual((id)values, (id)object);
     
-    MTObject *person = [object valueForKey:@"owner"];
+    MTObjectTransformer *person = [object valueForKey:@"owner"];
     XCTAssertNotNil(person);
-    XCTAssertTrue([person isKindOfClass:[MTObject class]]);
+    XCTAssertTrue([person isKindOfClass:[MTObjectTransformer class]]);
     
     XCTAssertEqualObjects(person.entity, [self entityWithName:@"Person"]);
     XCTAssertEqualObjects([person valueForKey:@"name"], @"Paul");
@@ -94,24 +94,24 @@
     NSDictionary *values = @{@"tags": @[@{@"name":@"A"}, @{@"name":@"B"}, @{@"name":@"C"}]};
     NSEntityDescription *entity = [self entityWithName:@"Entity"];
     
-    MTObject *object = [[MTObject alloc] initWithObject:values entity:entity userInfo:nil];
+    MTObjectTransformer *object = [[MTObjectTransformer alloc] initWithObject:values entity:entity userInfo:nil];
     XCTAssertNotNil(object);
     
     XCTAssertEqualObjects(object.entity, entity);
     XCTAssertNotEqual((id)values, (id)object);
     
-    MTArray *tags = [object valueForKey:@"tags"];
+    MTArrayTransformer *tags = [object valueForKey:@"tags"];
     XCTAssertNotNil(tags);
-    XCTAssertTrue([tags isKindOfClass:[MTArray class]]);
+    XCTAssertTrue([tags isKindOfClass:[MTArrayTransformer class]]);
     
     XCTAssertEqualObjects(tags.entity, [self entityWithName:@"Tag"]);
     
     XCTAssertEqual([tags count], (NSUInteger)3);
     
-    MTObject *tag = [tags objectAtIndex:0];
+    MTObjectTransformer *tag = [tags objectAtIndex:0];
     XCTAssertNotNil(tag);
     XCTAssertEqualObjects(tag.entity, [self entityWithName:@"Tag"]);
-    XCTAssertTrue([tag isKindOfClass:[MTObject class]]);
+    XCTAssertTrue([tag isKindOfClass:[MTObjectTransformer class]]);
 }
 
 #pragma mark Helpers

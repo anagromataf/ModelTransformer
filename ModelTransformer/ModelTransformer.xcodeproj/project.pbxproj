@@ -21,12 +21,12 @@
 		F60F24A618ACD5CB00528D12 /* libModelTransformerOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F60F249018ACD5CB00528D12 /* libModelTransformerOSX.a */; };
 		F60F24B618ACD66300528D12 /* ModelTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F248218ACD24D00528D12 /* ModelTransformerTests.m */; };
 		F60F24B718ACD66A00528D12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F60F247F18ACD24D00528D12 /* InfoPlist.strings */; };
-		F60F24BA18ACD71000528D12 /* MTObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F60F24B818ACD71000528D12 /* MTObject.h */; };
-		F60F24BB18ACD71000528D12 /* MTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24B918ACD71000528D12 /* MTObject.m */; };
-		F60F24BC18ACD71000528D12 /* MTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24B918ACD71000528D12 /* MTObject.m */; };
-		F60F24BF18ACD72200528D12 /* MTArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F60F24BD18ACD72200528D12 /* MTArray.h */; };
-		F60F24C018ACD72200528D12 /* MTArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24BE18ACD72200528D12 /* MTArray.m */; };
-		F60F24C118ACD72200528D12 /* MTArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24BE18ACD72200528D12 /* MTArray.m */; };
+		F60F24BA18ACD71000528D12 /* MTObjectTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = F60F24B818ACD71000528D12 /* MTObjectTransformer.h */; };
+		F60F24BB18ACD71000528D12 /* MTObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24B918ACD71000528D12 /* MTObjectTransformer.m */; };
+		F60F24BC18ACD71000528D12 /* MTObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24B918ACD71000528D12 /* MTObjectTransformer.m */; };
+		F60F24BF18ACD72200528D12 /* MTArrayTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = F60F24BD18ACD72200528D12 /* MTArrayTransformer.h */; };
+		F60F24C018ACD72200528D12 /* MTArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24BE18ACD72200528D12 /* MTArrayTransformer.m */; };
+		F60F24C118ACD72200528D12 /* MTArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F60F24BE18ACD72200528D12 /* MTArrayTransformer.m */; };
 		F6CF7E5218AE79820039CD2B /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */; };
 		F6CF7E5318AE79820039CD2B /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */; };
 /* End PBXBuildFile section */
@@ -78,10 +78,10 @@
 		F60F249518ACD5CB00528D12 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F60F249618ACD5CB00528D12 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		F60F24A118ACD5CB00528D12 /* ModelTransformerOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTransformerOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F60F24B818ACD71000528D12 /* MTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTObject.h; sourceTree = "<group>"; };
-		F60F24B918ACD71000528D12 /* MTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTObject.m; sourceTree = "<group>"; };
-		F60F24BD18ACD72200528D12 /* MTArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTArray.h; sourceTree = "<group>"; };
-		F60F24BE18ACD72200528D12 /* MTArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTArray.m; sourceTree = "<group>"; };
+		F60F24B818ACD71000528D12 /* MTObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTObjectTransformer.h; sourceTree = "<group>"; };
+		F60F24B918ACD71000528D12 /* MTObjectTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTObjectTransformer.m; sourceTree = "<group>"; };
+		F60F24BD18ACD72200528D12 /* MTArrayTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTArrayTransformer.h; sourceTree = "<group>"; };
+		F60F24BE18ACD72200528D12 /* MTArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTArrayTransformer.m; sourceTree = "<group>"; };
 		F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,10 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				F60F246B18ACD24D00528D12 /* ModelTransformer.h */,
-				F60F24B818ACD71000528D12 /* MTObject.h */,
-				F60F24B918ACD71000528D12 /* MTObject.m */,
-				F60F24BD18ACD72200528D12 /* MTArray.h */,
-				F60F24BE18ACD72200528D12 /* MTArray.m */,
+				F60F24B818ACD71000528D12 /* MTObjectTransformer.h */,
+				F60F24B918ACD71000528D12 /* MTObjectTransformer.m */,
+				F60F24BD18ACD72200528D12 /* MTArrayTransformer.h */,
+				F60F24BE18ACD72200528D12 /* MTArrayTransformer.m */,
 				F60F246918ACD24D00528D12 /* Supporting Files */,
 			);
 			path = ModelTransformer;
@@ -216,8 +216,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60F24BA18ACD71000528D12 /* MTObject.h in Headers */,
-				F60F24BF18ACD72200528D12 /* MTArray.h in Headers */,
+				F60F24BA18ACD71000528D12 /* MTObjectTransformer.h in Headers */,
+				F60F24BF18ACD72200528D12 /* MTArrayTransformer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60F24C018ACD72200528D12 /* MTArray.m in Sources */,
-				F60F24BB18ACD71000528D12 /* MTObject.m in Sources */,
+				F60F24C018ACD72200528D12 /* MTArrayTransformer.m in Sources */,
+				F60F24BB18ACD71000528D12 /* MTObjectTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,8 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60F24C118ACD72200528D12 /* MTArray.m in Sources */,
-				F60F24BC18ACD71000528D12 /* MTObject.m in Sources */,
+				F60F24C118ACD72200528D12 /* MTArrayTransformer.m in Sources */,
+				F60F24BC18ACD71000528D12 /* MTObjectTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
