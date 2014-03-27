@@ -63,14 +63,21 @@
 
 - (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object userInfo:(NSDictionary *)userInfo
 {
+    return [self transformedValueForRelationship:relationshipDescription ofObject:object userInfo:userInfo class:[MTObjectTransformer class]];
+}
+
+- (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object userInfo:(NSDictionary *)userInfo class:(Class)_class
+{
+    NSParameterAssert(_class);
+    
     id value = [object valueForKey:relationshipDescription.name];
     if (value == nil) {
         return nil;
     }
     if (relationshipDescription.isToMany) {
-        return [[MTArrayTransformer alloc] initWithArray:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
+        return [[MTArrayTransformer alloc] initWithArray:value entity:relationshipDescription.destinationEntity userInfo:userInfo class:_class];
     } else {
-        return [[MTObjectTransformer alloc] initWithObject:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
+        return [[_class alloc] initWithObject:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
     }
 }
 
