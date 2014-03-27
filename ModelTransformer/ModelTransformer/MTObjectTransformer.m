@@ -1,14 +1,14 @@
 //
-//  MTObject.m
+//  MTObjectTransformer.m
 //  ModelTransformer
 //
 //  Created by Tobias Kräntzer on 13.02.14.
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
-#import "MTArray.h"
+#import "MTArrayTransformer.h"
 
-#import "MTObject.h"
+#import "MTObjectTransformer.h"
 
 @interface MTNull : NSObject
 + (instancetype)null;
@@ -26,14 +26,14 @@
 }
 @end
 
-@interface MTObject () {
+@interface MTObjectTransformer () {
     id _mt_object;
     NSDictionary *_mt_userInfo;
     NSMapTable *_mt_cache;
 }
 @end
 
-@implementation MTObject
+@implementation MTObjectTransformer
 
 #pragma mark Life-cycle
 
@@ -68,9 +68,9 @@
         return nil;
     }
     if (relationshipDescription.isToMany) {
-        return [[MTArray alloc] initWithArray:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
+        return [[MTArrayTransformer alloc] initWithArray:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
     } else {
-        return [[MTObject alloc] initWithObject:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
+        return [[MTObjectTransformer alloc] initWithObject:value entity:relationshipDescription.destinationEntity userInfo:userInfo];
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  MTArray.h
+//  MTArrayTransformer.h
 //  ModelTransformer
 //
 //  Created by Tobias Kräntzer on 13.02.14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface MTArray : NSArray
+@interface MTArrayTransformer : NSArray
 
 #pragma mark Life-cycle
 - (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo;

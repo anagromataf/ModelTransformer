@@ -1,5 +1,5 @@
 //
-//  MTObject.h
+//  MTObjectTransformer.h
 //  ModelTransformer
 //
 //  Created by Tobias Kräntzer on 13.02.14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface MTObject : NSObject
+@interface MTObjectTransformer : NSObject
 
 #pragma mark Life-cycle
 - (id)initWithObject:(id)object entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo;
