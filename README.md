@@ -5,20 +5,20 @@
 
 ## Requirements
 
-The aim of ModelTransformer is to transform a model e.g., provided by an API to a CoreData model used by the application. For this the transformer has the knowledge of the managed object model of the application. Thus this transformer can only be used in conjunction with an `NSManagedObjectModel`.
+The aim of ModelTransformer is to transform a model e.g., provided by an API to a CoreData model used by the application. For this the transformer has the knowledge of the entity to that the object should be transformed to. Thus this transformers can only be used in conjunction with an `NSManagedObjectModel`.
 
 ## Installation
 
-ModelTransformer is available through [CocoaPods](http://cocoapods.org), to install
-it simply add the following line to your Podfile:
+ModelTransformer is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
     pod "ModelTransformer"
 
 ## Usage
 
-`MTObject Transformer` and `MTArrayTransformer` are base classes for custom model transformation. Applications using this transformer must therefore subclass these base classes to provide their own logic. 
+`MTObjectTransformer` and `MTArrayTransformer` are base classes for custom model transformations. Applications using this transformers must therefore subclass these classes to provide their own logic. 
 
-The example below transforms all attributes of type NSDateAttributeType using a date formatter to NSDate obejcts and the attribute with the name 'url' to an NSURL object.
+The example below transforms all attributes of type NSDateAttributeType using a date formatter to NSDate objects and the attribute with the name 'url' to an NSURL object.
 
 	@implementation MyObjectTransformer
 	
@@ -47,7 +47,7 @@ The example below transforms all attributes of type NSDateAttributeType using a 
 	
 	@end
 
-In general the transformation is done with the following methods, that can be overwritten in subclasses. All this methods have a fallback that _forward_ the call the the underlying object.
+In general the transformation is done with the following methods, that can be overwritten in subclasses. The base class will return the value from `valueForKey:`, if the property is an attribute property, or in case of an relationship property an object of type `MTObjectTransformer` or `MTArrayTransformer`, depending on the cardinality (to-one or to-many).
 
 ### Object Transformer
 
