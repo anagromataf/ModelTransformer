@@ -1,7 +1,7 @@
 # Model Transformer
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/ResourceMapper/badge.png)](http://cocoadocs.org/docsets/ResourceMapper)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/ResourceMapper/badge.png)](http://cocoadocs.org/docsets/ResourceMapper)
+[![Version](http://cocoapod-badges.herokuapp.com/v/ModelTransformer/badge.png)](http://cocoadocs.org/docsets/ModelTransformer)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/ModelTransformer/badge.png)](http://cocoadocs.org/docsets/ModelTransformer)
 
 ## Requirements
 
