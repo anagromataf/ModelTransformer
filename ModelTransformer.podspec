@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name				= "ModelTransformer"
-	s.version			= "1.0"
+	s.version			= "1.0.1"
 	s.authors			= { "Tobias Kräntzer" => "info@tobias-kranetzer.de" }
 	s.social_media_url 	= 'https://twitter.com/anagrom_ataf'
 	s.license 			= { :type => 'BSD', :file => 'LICENSE.md' }
