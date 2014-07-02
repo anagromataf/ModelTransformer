@@ -134,7 +134,7 @@
 
 #pragma mark Open From File
 
-- (void)testWithContentsOfJSONFile
+- (void)testObjectWithContentsOfJSONFile
 {
     NSEntityDescription *entity = [self entityWithName:@"Entity"];
     NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"object" withExtension:@"json"];
@@ -163,6 +163,26 @@
     XCTAssertNotNil(tag);
     XCTAssertEqualObjects(tag.entity, [self entityWithName:@"Tag"]);
     XCTAssertTrue([tag isKindOfClass:[MTObjectTransformer class]]);
+}
+
+- (void)testArrayWithContentsOfJSONFile
+{
+    NSEntityDescription *entity = [self entityWithName:@"Tag"];
+    NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"array" withExtension:@"json"];
+    
+    NSError *error = nil;
+    
+    MTArrayTransformer *array = [MTArrayTransformer arrayWithContentsOfJSONFile:fileURL
+                                                               formatVersionKey:@"format_version"
+                                                                  rootObjectKey:@"tags"
+                                                                         entity:entity
+                                                                       userInfo:nil
+                                                                          error:&error];
+
+    XCTAssertNotNil(array);
+    
+    XCTAssertEqualObjects(array.entity, entity);
+    XCTAssertEqual([array count], (NSUInteger)3);
 }
 
 #pragma mark Helpers

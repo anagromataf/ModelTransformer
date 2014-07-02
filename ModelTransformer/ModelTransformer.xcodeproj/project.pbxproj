@@ -31,6 +31,8 @@
 		F6506A4919643AB300A9148A /* object.json in Resources */ = {isa = PBXBuildFile; fileRef = F6506A4719643AB300A9148A /* object.json */; };
 		F6506A4B19643BC000A9148A /* ModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6506A4A19643BC000A9148A /* ModelTransformer.m */; };
 		F6506A4C19643BC000A9148A /* ModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6506A4A19643BC000A9148A /* ModelTransformer.m */; };
+		F6506A4E1964400400A9148A /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = F6506A4D19643F6000A9148A /* array.json */; };
+		F6506A4F1964400400A9148A /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = F6506A4D19643F6000A9148A /* array.json */; };
 		F6CF7E5218AE79820039CD2B /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */; };
 		F6CF7E5318AE79820039CD2B /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,7 @@
 		F60F24BE18ACD72200528D12 /* MTArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTArrayTransformer.m; sourceTree = "<group>"; };
 		F6506A4719643AB300A9148A /* object.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = object.json; sourceTree = "<group>"; };
 		F6506A4A19643BC000A9148A /* ModelTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTransformer.m; sourceTree = "<group>"; };
+		F6506A4D19643F6000A9148A /* array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array.json; sourceTree = "<group>"; };
 		F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +196,7 @@
 				F6CF7E5118AE79820039CD2B /* Model.xcdatamodel */,
 				F60F248218ACD24D00528D12 /* ModelTransformerTests.m */,
 				F6506A4719643AB300A9148A /* object.json */,
+				F6506A4D19643F6000A9148A /* array.json */,
 				F60F247D18ACD24D00528D12 /* Supporting Files */,
 			);
 			path = ModelTransformerTests;
@@ -338,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6506A4819643AB300A9148A /* object.json in Resources */,
+				F6506A4E1964400400A9148A /* array.json in Resources */,
 				F60F248118ACD24D00528D12 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6506A4919643AB300A9148A /* object.json in Resources */,
+				F6506A4F1964400400A9148A /* array.json in Resources */,
 				F60F24B718ACD66A00528D12 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,22 @@
 
 @interface MTArrayTransformer : NSArray
 
+#pragma mark Array From JSON-File
++ (instancetype)arrayWithContentsOfJSONFile:(NSURL *)fileURL
+                           formatVersionKey:(NSString *)formatVersionKey
+                              rootObjectKey:(NSString *)rootObjectKey
+                                     entity:(NSEntityDescription *)entity
+                                   userInfo:(NSDictionary *)userInfo
+                                      error:(NSError **)error;
+
++ (instancetype)arrayWithContentsOfJSONFile:(NSURL *)fileURL
+                           formatVersionKey:(NSString *)formatVersionKey
+                              rootObjectKey:(NSString *)rootObjectKey
+                                     entity:(NSEntityDescription *)entity
+                                   userInfo:(NSDictionary *)userInfo
+                                      class:(Class)_class
+                                      error:(NSError **)error;
+
 #pragma mark Life-cycle
 - (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo;
 - (instancetype)initWithArray:(NSArray *)array entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo class:(Class)_class;
