@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
-#import "MTObjectTransformer.h"
+#import "ModelTransformer.h"
 
 #import "MTArrayTransformer.h"
 
@@ -21,6 +21,48 @@
 @end
 
 @implementation MTArrayTransformer
+
+#pragma mark Array From JSON-File
+
++ (instancetype)arrayWithContentsOfJSONFile:(NSURL *)fileURL
+                           formatVersionKey:(NSString *)formatVersionKey
+                              rootObjectKey:(NSString *)rootObjectKey
+                                     entity:(NSEntityDescription *)entity
+                                   userInfo:(NSDictionary *)userInfo
+                                      error:(NSError **)error
+{
+    return [self arrayWithContentsOfJSONFile:fileURL
+                            formatVersionKey:formatVersionKey
+                               rootObjectKey:rootObjectKey
+                                      entity:entity
+                                    userInfo:userInfo
+                                       class:[MTObjectTransformer class]
+                                       error:error];
+}
+
++ (instancetype)arrayWithContentsOfJSONFile:(NSURL *)fileURL
+                           formatVersionKey:(NSString *)formatVersionKey
+                              rootObjectKey:(NSString *)rootObjectKey
+                                     entity:(NSEntityDescription *)entity
+                                   userInfo:(NSDictionary *)userInfo
+                                      class:(__unsafe_unretained Class)_class
+                                      error:(NSError *__autoreleasing *)error
+{
+    NSData *data = [NSData dataWithContentsOfURL:fileURL];
+    NSDictionary *values = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
+    if (values) {
+        NSString *formatVersion = [values valueForKey:formatVersionKey];
+        NSArray *rootArray = [values valueForKey:rootObjectKey];
+        if ([rootArray isKindOfClass:[NSArray class]]) {
+            NSMutableDictionary *_userInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
+            if (formatVersion) {
+                [_userInfo setValue:formatVersion forKey:MTFormatVersionKey];
+            }
+            return [[self alloc] initWithArray:rootArray entity:entity userInfo:userInfo class:_class];
+        }
+    }
+    return nil;
+}
 
 #pragma mark Life-cycle
 

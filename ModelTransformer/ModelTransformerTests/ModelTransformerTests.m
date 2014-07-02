@@ -132,6 +132,59 @@
     XCTAssertTrue([tag isKindOfClass:[MTObjectTransformer class]]);
 }
 
+#pragma mark Open From File
+
+- (void)testObjectWithContentsOfJSONFile
+{
+    NSEntityDescription *entity = [self entityWithName:@"Entity"];
+    NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"object" withExtension:@"json"];
+    
+    NSError *error = nil;
+    
+    MTObjectTransformer *object = [MTObjectTransformer objectWithContentsOfJSONFile:fileURL
+                                                                        formatVersionKey:@"format_version"
+                                                                           rootObjectKey:@"root"
+                                                                                  entity:entity
+                                                                                userInfo:nil
+                                                                                   error:&error];
+    XCTAssertNotNil(object);
+    
+    XCTAssertEqualObjects(object.entity, entity);
+    
+    MTArrayTransformer *tags = [object valueForKey:@"tags"];
+    XCTAssertNotNil(tags);
+    XCTAssertTrue([tags isKindOfClass:[MTArrayTransformer class]]);
+    
+    XCTAssertEqualObjects(tags.entity, [self entityWithName:@"Tag"]);
+    
+    XCTAssertEqual([tags count], (NSUInteger)3);
+    
+    MTObjectTransformer *tag = [tags objectAtIndex:0];
+    XCTAssertNotNil(tag);
+    XCTAssertEqualObjects(tag.entity, [self entityWithName:@"Tag"]);
+    XCTAssertTrue([tag isKindOfClass:[MTObjectTransformer class]]);
+}
+
+- (void)testArrayWithContentsOfJSONFile
+{
+    NSEntityDescription *entity = [self entityWithName:@"Tag"];
+    NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"array" withExtension:@"json"];
+    
+    NSError *error = nil;
+    
+    MTArrayTransformer *array = [MTArrayTransformer arrayWithContentsOfJSONFile:fileURL
+                                                               formatVersionKey:@"format_version"
+                                                                  rootObjectKey:@"tags"
+                                                                         entity:entity
+                                                                       userInfo:nil
+                                                                          error:&error];
+
+    XCTAssertNotNil(array);
+    
+    XCTAssertEqualObjects(array.entity, entity);
+    XCTAssertEqual([array count], (NSUInteger)3);
+}
+
 #pragma mark Helpers
 
 - (NSEntityDescription *)entityWithName:(NSString *)name

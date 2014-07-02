@@ -11,6 +11,14 @@
 
 @interface MTObjectTransformer : NSObject
 
+#pragma mark Object From JSON-File
++ (instancetype)objectWithContentsOfJSONFile:(NSURL *)fileURL
+                            formatVersionKey:(NSString *)formatVersionKey
+                               rootObjectKey:(NSString *)rootObjectKey
+                                      entity:(NSEntityDescription *)entity
+                                    userInfo:(NSDictionary *)userInfo
+                                       error:(NSError **)error;
+
 #pragma mark Life-cycle
 - (id)initWithObject:(id)object entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo;
 

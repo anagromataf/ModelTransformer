@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
-#import "MTArrayTransformer.h"
+#import "ModelTransformer.h"
 
 #import "MTObjectTransformer.h"
 
@@ -34,6 +34,31 @@
 @end
 
 @implementation MTObjectTransformer
+
+#pragma mark Object From File
+
++ (instancetype)objectWithContentsOfJSONFile:(NSURL *)fileURL
+                            formatVersionKey:(NSString *)formatVersionKey
+                               rootObjectKey:(NSString *)rootObjectKey
+                                      entity:(NSEntityDescription *)entity
+                                    userInfo:(NSDictionary *)userInfo
+                                       error:(NSError **)error
+{
+    NSData *data = [NSData dataWithContentsOfURL:fileURL];
+    NSDictionary *values = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
+    if (values) {
+        NSString *formatVersion = [values valueForKey:formatVersionKey];
+        NSDictionary *rootObject = [values valueForKey:rootObjectKey];
+        if ([rootObject isKindOfClass:[NSDictionary class]]) {
+            NSMutableDictionary *_userInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
+            if (formatVersion) {
+                [_userInfo setValue:formatVersion forKey:MTFormatVersionKey];
+            }
+            return [[self alloc] initWithObject:rootObject entity:entity userInfo:_userInfo];
+        }
+    }
+    return nil;
+}
 
 #pragma mark Life-cycle
 

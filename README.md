@@ -1,7 +1,7 @@
 # Model Transformer
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/ResourceMapper/badge.png)](http://cocoadocs.org/docsets/ResourceMapper)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/ResourceMapper/badge.png)](http://cocoadocs.org/docsets/ResourceMapper)
+[![Version](http://cocoapod-badges.herokuapp.com/v/ModelTransformer/badge.png)](http://cocoadocs.org/docsets/ModelTransformer)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/ModelTransformer/badge.png)](http://cocoadocs.org/docsets/ModelTransformer)
 
 ## Requirements
 
@@ -90,7 +90,7 @@ Tobias Kräntzer, info@tobias-kraentzer.de
 
 ## License
 
-Copyright (c) 2014, Tobais Kräntzer
+Copyright (c) 2014, Tobias Kräntzer
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
