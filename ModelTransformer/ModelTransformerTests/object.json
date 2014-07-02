@@ -1,0 +1,8 @@
+{
+    "format_version": "0.0.1",
+    "root": {
+        "tags": [{"name":"A"},
+                 {"name":"B"},
+                 {"name":"C"}]
+    }
+}
