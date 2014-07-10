@@ -19,6 +19,9 @@
                                     userInfo:(NSDictionary *)userInfo
                                        error:(NSError **)error;
 
+#pragma mark Object Value Key Paths
++ (NSDictionary *)objectValueKeyPathByPropertyName;
+
 #pragma mark Life-cycle
 - (id)initWithObject:(id)object entity:(NSEntityDescription *)entity userInfo:(NSDictionary *)userInfo;
 

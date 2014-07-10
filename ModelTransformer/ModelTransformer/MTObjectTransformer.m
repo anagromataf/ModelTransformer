@@ -60,6 +60,13 @@
     return nil;
 }
 
+#pragma mark Object Value Key Paths
+
++ (NSDictionary *)objectValueKeyPathByPropertyName
+{
+    return @{};
+}
+
 #pragma mark Life-cycle
 
 - (id)initWithObject:(id)object entity:(NSEntityDescription *)entity
@@ -83,7 +90,12 @@
 
 - (id)transformedValueForAttribute:(NSAttributeDescription *)attributeDescription ofObject:(id)object userInfo:(NSDictionary *)userInfo
 {
-    return [object valueForKey:attributeDescription.name];
+    NSString *keyPath = [[[self class] objectValueKeyPathByPropertyName] objectForKey:attributeDescription.name];
+    if (keyPath) {
+        return [object valueForKeyPath:keyPath];
+    } else {
+        return [object valueForKey:attributeDescription.name];
+    }
 }
 
 - (id)transformedValueForRelationship:(NSRelationshipDescription *)relationshipDescription ofObject:(id)object userInfo:(NSDictionary *)userInfo
