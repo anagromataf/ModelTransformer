@@ -165,6 +165,24 @@
     XCTAssertTrue([tag isKindOfClass:[MTObjectTransformer class]]);
 }
 
+- (void)testObjectWithContentsOfJSONFile_NoFile
+{
+    NSEntityDescription *entity = [self entityWithName:@"Entity"];
+    NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"no" withExtension:@"json"];
+    
+    NSError *error = nil;
+    MTObjectTransformer *object = [MTObjectTransformer objectWithContentsOfJSONFile:fileURL
+                                                                   formatVersionKey:@"format_version"
+                                                                      rootObjectKey:@"root"
+                                                                             entity:entity
+                                                                           userInfo:nil
+                                                                              error:&error];
+    XCTAssertNil(object);
+    XCTAssertNotNil(error);
+    XCTAssertEqualObjects(error.domain, MTErrorDomain);
+    XCTAssertEqual(error.code, MTNoDataErrorCode);
+}
+
 - (void)testArrayWithContentsOfJSONFile
 {
     NSEntityDescription *entity = [self entityWithName:@"Tag"];
@@ -183,6 +201,26 @@
     
     XCTAssertEqualObjects(array.entity, entity);
     XCTAssertEqual([array count], (NSUInteger)3);
+}
+
+- (void)testArrayWithContentsOfJSONFile_NoFile
+{
+    NSEntityDescription *entity = [self entityWithName:@"Tag"];
+    NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"no" withExtension:@"json"];
+    
+    NSError *error = nil;
+    
+    MTArrayTransformer *array = [MTArrayTransformer arrayWithContentsOfJSONFile:fileURL
+                                                               formatVersionKey:@"format_version"
+                                                                  rootObjectKey:@"tags"
+                                                                         entity:entity
+                                                                       userInfo:nil
+                                                                          error:&error];
+    
+    XCTAssertNil(array);
+    XCTAssertNotNil(error);
+    XCTAssertEqualObjects(error.domain, MTErrorDomain);
+    XCTAssertEqual(error.code, MTNoDataErrorCode);
 }
 
 #pragma mark Helpers
