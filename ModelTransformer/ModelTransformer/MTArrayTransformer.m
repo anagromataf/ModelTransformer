@@ -49,6 +49,14 @@
                                       error:(NSError *__autoreleasing *)error
 {
     NSData *data = [NSData dataWithContentsOfURL:fileURL];
+    
+    if (data == nil) {
+        if (error) {
+            *error = [NSError errorWithDomain:MTErrorDomain code:MTNoDataErrorCode userInfo:nil];
+        }
+        return nil;
+    }
+    
     NSDictionary *values = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
     if (values) {
         NSString *formatVersion = [values valueForKey:formatVersionKey];

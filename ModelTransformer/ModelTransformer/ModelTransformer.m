@@ -9,3 +9,6 @@
 #import "ModelTransformer.h"
 
 NSString * const MTFormatVersionKey = @"MTFormatVersionKey";
+
+NSString * const MTErrorDomain = @"MTErrorDomain";
+NSUInteger const MTNoDataErrorCode = 10;

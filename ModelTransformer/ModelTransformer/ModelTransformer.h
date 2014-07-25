@@ -12,3 +12,5 @@
 
 extern NSString * const MTFormatVersionKey;
 
+extern NSString * const MTErrorDomain;
+extern NSUInteger const MTNoDataErrorCode;
