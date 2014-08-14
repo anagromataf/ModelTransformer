@@ -54,8 +54,8 @@
     
     NSDictionary *values = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
     if (values) {
-        NSString *formatVersion = [values valueForKey:formatVersionKey];
-        NSDictionary *rootObject = [values valueForKey:rootObjectKey];
+        NSString *formatVersion = formatVersionKey ? [values valueForKey:formatVersionKey] : nil;
+        NSDictionary *rootObject = rootObjectKey ? [values valueForKey:rootObjectKey] : values;
         if ([rootObject isKindOfClass:[NSDictionary class]]) {
             NSMutableDictionary *_userInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
             if (formatVersion) {

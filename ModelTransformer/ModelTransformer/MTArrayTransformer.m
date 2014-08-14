@@ -59,7 +59,7 @@
     
     NSDictionary *values = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
     if (values) {
-        NSString *formatVersion = [values valueForKey:formatVersionKey];
+        NSString *formatVersion = formatVersionKey ? [values valueForKey:formatVersionKey] : nil;
         NSArray *rootArray = [values valueForKey:rootObjectKey];
         if ([rootArray isKindOfClass:[NSArray class]]) {
             NSMutableDictionary *_userInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
